@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Form</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/item/postJqueryAjax.js"></script>
+  <script src="/bootstrap/js/item/getrequest.js"></script>
+  <script src="/bootstrap/js/order/postJqueryAjax.js"></script>
+  <script src="/bootstrap/js/order/getrequest.js"></script>
+  <script src="/bootstrap/js/order/getORderRequest.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+ 
+	<h3 style="margin-top:20px;margin-bottom:20px">Item</h3>
+	
+	<div class="row">
+	<div class="col-md-4">
+		<h5>Create Item</h5>
+			<form id="itemStackForm">
+			  <div class="form-group">
+			    <label for="stackedItemName">Item Name:</label>
+			    <input type="text" class="form-control" id="stackedItemName" placeholder="Enter Name" />
+			  </div>
+			  <div class="form-group">
+			    <label for="stackedItemPrice">Item Price:</label>
+			    <input type="text" class="form-control" id="stackedItemPrice" placeholder="Enter Price" />
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		<br/>
+		<br/>
+		<button type="button" class="btn btn-info btn-lg" id="btnId">Get Items</button>
+		<br/>
+		
+		<div id="postResultMsg" style="margin-top:20px">
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<button type="button" class="btn btn-info btn-lg" id="ordtnId">Place Order</button>
+			<h5>Add Items and Quantity to order</h5>
+			<form id="orderStackedForm">
+			  <div class="form-group">
+			    <label for="stackedOrderId">Order ID:</label>
+			    <input type="text" class="form-control" id="stackedOrderId" placeholder="Enter Order ID" />
+			  </div>
+			  <div class="form-group">
+			    <label for="stackedItemId">Item ID:</label>
+			    <input type="text" class="form-control" id="stackedItemId" placeholder="Enter Item ID" />
+			  </div>
+			  <div class="form-group">
+			    <label for=""stackedQuantity"">Quantity:</label>
+			    <input type="text" class="form-control" id="stackedQuantity" placeholder="Enter Quantity" />
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		<br/>
+		<br/>
+		<button type="button" class="btn btn-info btn-lg" id="orderBtnId">Get Order</button>
+		<br/>
+		
+		<div id="postResultMsg" style="margin-top:20px">
+		</div>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>
