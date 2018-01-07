@@ -46,7 +46,7 @@ public class Item {
 			this.name = name;
 		}
 		else {
-			throw new InvalidDataException("The name contains value/s other than characters!!");
+			throw new InvalidDataException("The name contains value other than characters!!");
 		}
 	}
 

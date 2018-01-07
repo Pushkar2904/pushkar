@@ -30,8 +30,6 @@ import answer.king.model.Item;
 import answer.king.model.LineItem;
 import answer.king.model.Order;
 import answer.king.model.Receipt;
-import answer.king.repo.ItemRepository;
-import answer.king.repo.OrderRepository;
 import answer.king.service.ItemService;
 import answer.king.service.OrderService;
 import answer.king.util.InvalidDataException;
@@ -76,8 +74,6 @@ public class OrderControllerTest extends AppBaseMvcTest{
 		 
 		 List<Order> orders = Lists.newArrayList();
 		 orders.add(order);
-		 
-		 final String orderJson = jsonTester.write(order).getJson();
 		 Mockito.when(orderService.getAll()).thenReturn(orders);
 		 
 		 RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
@@ -149,7 +145,7 @@ public class OrderControllerTest extends AppBaseMvcTest{
   		
 		Mockito.when(orderService.pay(Mockito.anyLong(), Mockito.any())).thenReturn(receipt);
   		
-		mockMvc.perform(put("/order/{id}/pay", 1L)
+		mockMvc.perform(put("/order/{id}/pay", order.getId())
 	  				.contentType(MediaType.APPLICATION_JSON_UTF8)
 	  				.content(orderJson)
 	  				)

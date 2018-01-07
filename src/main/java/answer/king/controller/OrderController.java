@@ -34,12 +34,12 @@ public class OrderController {
 
 	//Added mapping for quantity
 	@RequestMapping(value = "/{id}/addItem/{itemId}/{quantity}", method = RequestMethod.PUT)
-	public void addItem(@PathVariable("id") Long id, @PathVariable("itemId") Long itemId, @PathVariable("quantity") Long quantity) {
-		orderService.addItem(id, itemId, quantity);
+	public Order addItem(@PathVariable("id") Long id, @PathVariable("itemId") Long itemId, @PathVariable("quantity") Long quantity) {
+		return orderService.addItem(id, itemId, quantity);
 	}
 
 	@RequestMapping(value = "/{id}/pay", method = RequestMethod.PUT)
-	public Receipt pay(@PathVariable("id") Long id, @RequestBody BigDecimal payment) throws InsufficientFundsException {
+	public Receipt pay(@PathVariable("id") Long id, @RequestBody BigDecimal payment) throws InsufficientFundsException {		
 		return orderService.pay(id, payment);
 	}
 }

@@ -29,7 +29,7 @@ public class Order {
 	@OneToMany(mappedBy= "order", cascade = { CascadeType.ALL, CascadeType.PERSIST }, fetch=FetchType.EAGER)	
 	private List<LineItem> lineItems;
 	
-	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)	
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL, optional=true)	
 	private Receipt receipt;
 	
 	public Receipt getReceipt() {
